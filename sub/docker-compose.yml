@@ -6,16 +6,17 @@ services:
       - 30002:27017
     volumes: 
       - mongo2:/data/db
-    command: mongod --replSet mongoset 
+    command: mongod --replSet rs1 
     extra_hosts:
       - "mainhost:3.38.115.155"
+      - "mongohost:54.180.115.98"
   mongo3:
     image: "mongo"
     ports:
       - "30003:27017"
     volumes:
-      - mongo3:/data/db
-    command: mongod --replSet mongoset 
+      - mongo3:/var/lib/mongodb/arb
+    command: mongod --replSet rs1 --dbpath /var/lib/mongodb/arb
     extra_hosts:
       - "mainhost:3.38.115.155"
       - "mongohost:54.180.115.98"

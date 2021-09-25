@@ -10,11 +10,11 @@ services:
       einys/mongo
     networks:
       - main-networks
-    command: mongod --replSet mongoset 
+    command: mongod --replSet rs1 
     extra_hosts:
       - "mongohost:54.180.115.98"
       - "mainhost:3.38.115.155"
-    # setreplication.js 에 지정한 이름과 같게 : mymongoset
+    # setreplication.js 에 지정한 이름과 같게 : myrs1
 
 volumes: 
   mongo1:
