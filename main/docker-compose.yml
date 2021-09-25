@@ -13,6 +13,7 @@ services:
     command: mongod --replSet mongoset 
     extra_hosts:
       - "mongohost:54.180.115.98"
+      - "mainhost:3.38.115.155"
     # setreplication.js 에 지정한 이름과 같게 : mymongoset
 
 volumes: 

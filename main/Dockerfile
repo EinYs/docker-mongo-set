@@ -7,4 +7,4 @@ COPY init/* init/
 
 RUN chmod +x init/setup.sh 
 
-CMD ["sh", "/usr/src/configs/init/setup.sh"]
+# CMD ["sh", "/usr/src/configs/init/setup.sh"]

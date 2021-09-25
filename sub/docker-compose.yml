@@ -18,6 +18,7 @@ services:
     command: mongod --replSet mongoset 
     extra_hosts:
       - "mainhost:3.38.115.155"
+      - "mongohost:54.180.115.98"
 volumes: 
   mongo2:
   mongo3:
