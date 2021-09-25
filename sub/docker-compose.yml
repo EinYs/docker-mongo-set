@@ -1,21 +1,21 @@
 version: "3"
 services:
-  mongo1:
+  mongo2:
     image: mongo
     ports:
-      - 30001:27017
+      - 30002:27017
     volumes: 
-      - mongo1:/data/db
-    command: mongod --replSet mongoset 
-
-  mongo2:
-    image: "mongo"
-    ports:
-      - "30002:27017"
-    volumes:
       - mongo2:/data/db
     command: mongod --replSet mongoset 
 
+  mongo3:
+    image: "mongo"
+    ports:
+      - "30003:27017"
+    volumes:
+      - mongo3:/data/db
+    command: mongod --replSet mongoset 
+
 volumes: 
-  mongo1:
   mongo2:
+  mongo3:
