@@ -7,7 +7,8 @@ services:
     volumes: 
       - mongo2:/data/db
     command: mongod --replSet mongoset 
-
+    extra_hosts:
+      - "mainhost:3.38.115.155"
   mongo3:
     image: "mongo"
     ports:
@@ -15,7 +16,8 @@ services:
     volumes:
       - mongo3:/data/db
     command: mongod --replSet mongoset 
-
+    extra_hosts:
+      - "mainhost:3.38.115.155"
 volumes: 
   mongo2:
   mongo3:
