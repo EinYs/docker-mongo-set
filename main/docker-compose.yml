@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mongo1:
+    build: .
+    ports:
+      - "30001:27017"
+    volumes:
+      - mongo1:/data/db
+    image:
+      einys/mongo
+    networks:
+      - main-networks
+    command: mongod --replSet mongoset 
+    extra_hosts:
+      - "mongohost:54.180.115.98"
+    # setreplication.js 에 지정한 이름과 같게 : mymongoset
+
+volumes: 
+  mongo1:
+
+networks:
+  main-networks:
+    driver: bridge

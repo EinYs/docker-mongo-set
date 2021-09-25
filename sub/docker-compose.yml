@@ -6,13 +6,15 @@ services:
       - 30001:27017
     volumes: 
       - mongo1:/data/db
-      
+    command: mongod --replSet mongoset 
+
   mongo2:
     image: "mongo"
     ports:
       - "30002:27017"
     volumes:
       - mongo2:/data/db
+    command: mongod --replSet mongoset 
 
 volumes: 
   mongo1:
